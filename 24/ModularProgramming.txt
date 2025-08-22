@@ -1,0 +1,40 @@
+Recommended Separation under modular programming: 
+    Type.h 
+    Type.c / Type.cpp   (Includes Type.h)
+    useType.c / useType.cpp (Include Type.h)
+
+Type.h + Type.c/Type.cpp == SERVER SIDE == Compiled into static or dynamic link library 
+Type.h + useType.c/useType.cpp == CLIENT SIDE == Compiled into an executable file 
+#--------------------------------------------------------------------------------------------
+Structure of header file. 
+
+1) Guard of header file. (This allows inclusion of header file in multiple source files within 
+    project without fear of ODR violation)
+
+2) Other include files (if any)
+
+3) Symbolic constants / macros (if any)
+#define SIZE 10     --> Symbolic constant 
+#define MAX(a, b)   ((a) > (b) ? (a) : (b))  --> Macro 
+
+4) typedefs (if any)
+
+5) type definitions (if any) / class template definition 
+
+6) global / C like / Stand-alone functions declarations / function template definitions (if any)
+
+#-----------------------------------------------------------------------------
+HelloWorld.java
+class HelloWorld
+{
+    public static void main(String[] args){
+        System.out.println("Hello,World"); 
+    }
+}; 
+
+HelloWorld H; 
+
+// Those who do not understand Unix, are condemned to reinvent it, but poorly. 
+
+// Core Java Vol 1 
+#-----------------------------------------------------------------------------
